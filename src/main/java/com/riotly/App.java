@@ -24,8 +24,8 @@ public class App {
 		try {
 			final ClassLoader classLoader = App.class.getClassLoader();
 
-			final Storage storage = GoogleCloudWorker.authExplicit(classLoader.getResource("credentials.json").getPath());
-			final Bucket bucket = storage.get(GoogleCloudWorker.BUCKET_NAME);
+			final Storage storage = GoogleCloudWorker.authExplicit(classLoader.getResource("credentials.json").getPath(), GoogleCloudWorker.DEFAULT_PROJECT_ID);
+			final Bucket bucket = storage.get(GoogleCloudWorker.DEFAULT_BUCKET_NAME);
 
 			final Path downloadToPath = FileHelper.createDirectory(GoogleCloudWorker.DATA_DIRECTORY_NAME);
 

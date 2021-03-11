@@ -28,50 +28,82 @@ import com.google.common.collect.Lists;
 
 public class GoogleCloudWorker {
 
-	public static final String PROJECT_ID = "riotly-interview";
-	public static final String BUCKET_NAME = "riotly-interview-test";
+	public static final String GOOGLE_CLOUD_PLATFORM_URL = "https://www.googleapis.com/auth/cloud-platform";
+	public static final String DEFAULT_PROJECT_ID = "riotly-interview";
+	public static final String DEFAULT_BUCKET_NAME = "riotly-interview-test";
+
 	public static final String DATA_DIRECTORY_NAME = "data";
-
 	public static final String UPLOAD_TO_DIRECTORY_NAME = "output";
-	public static final String JSON_EXTENSTION = ".json";
 
-	private Storage storage;
-	private Bucket bucket;
+	public static final String JSON_EXTENSION = ".json";
 
-	public GoogleCloudWorker(Storage storage, Bucket bucket) {
+	private final Storage storage;
+	private final Bucket bucket;
+	private String outputDirName;
+
+	public GoogleCloudWorker(final Storage storage, final Bucket bucket) {
 		this.storage = storage;
 		this.bucket = bucket;
+		this.outputDirName = UPLOAD_TO_DIRECTORY_NAME;
 	}
 
-	public Storage getStorage() {
-		return this.storage;
+	public GoogleCloudWorker(final Storage storage, final Bucket bucket, final String outputDirName) {
+		this(storage, bucket);
+		if (isNotBlank(outputDirName)) {
+			this.outputDirName = outputDirName.trim();
+		}
 	}
 
-	public Bucket getBucket() {
-		return this.bucket;
+	public void setOutputDirName(String outputDirName) {
+		this.outputDirName = outputDirName;
 	}
 
-	public static Storage authExplicit(String jsonPath) throws IOException {
-		GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
-				.createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
+	private static boolean isNotBlank(final String value) {
+		return !isBlank(value);
+	}
 
-		return StorageOptions.newBuilder().setCredentials(credentials).setProjectId(GoogleCloudWorker.PROJECT_ID)
-				.build().getService();
+	private static boolean isBlank(final String value) {
+		return value == null || value.trim().isEmpty();
+	}
+
+	public static Storage authExplicit(final String jsonPath, final String projectId) throws IOException {
+		if (isBlank(jsonPath)) {
+			throw new IllegalArgumentException("File path must be set");
+		}
+		if (!jsonPath.endsWith(JSON_EXTENSION)) {
+			throw new IllegalArgumentException("File provided must be json file");
+		}
+
+		final GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
+				.createScoped(Lists.newArrayList(GOOGLE_CLOUD_PLATFORM_URL));
+
+		final String projId = isNotBlank(projectId) ? projectId : DEFAULT_PROJECT_ID;
+
+		return StorageOptions.newBuilder()
+				.setCredentials(credentials)
+				.setProjectId(projId)
+				.build()
+				.getService();
 	}
 
 	public Set<Blob> collectJsonObjectNamesInBucketDirectory(final String directory) {
+		if (isBlank(directory)) {
+			throw new IllegalArgumentException("Directory needs to be specified");
+		}
+
 		return StreamSupport.stream(bucket.list().iterateAll().spliterator(), false)
-				.filter(o -> o.getName().startsWith(GoogleCloudWorker.DATA_DIRECTORY_NAME)
-						&& o.getName().endsWith(GoogleCloudWorker.JSON_EXTENSTION))
+				.filter(o -> o.getName().startsWith(directory)
+						&& o.getName().endsWith(JSON_EXTENSION))
 				.collect(Collectors.toSet());
 	}
 
 	public Optional<Blob> getOutputBlob() {
+		final String directoryPath = outputDirName + "/";
 		return StreamSupport.stream(bucket.list().iterateAll().spliterator(), false)
-				.filter(o -> o.getName().equals(GoogleCloudWorker.UPLOAD_TO_DIRECTORY_NAME + "/")).findFirst();
+				.filter(o -> o.getName().equals(directoryPath)).findFirst();
 	}
 
-	public void download(Blob blob, Path downloadTo) throws IOException {
+	public void download(final Blob blob, final Path downloadTo) throws IOException {
 		if (blob == null) {
 			System.err.println("No such object");
 			return;
@@ -103,9 +135,9 @@ public class GoogleCloudWorker {
 		}
 	}
 
-	public void upload(Path uploadFrom, Blob outputBlob) throws IOException {
-		BlobId blobId = BlobId.of(outputBlob.getBucket(), GoogleCloudWorker.UPLOAD_TO_DIRECTORY_NAME + "/milan brankovic.zip");
-		BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("application/zip").build();
+	public void upload(final Path uploadFrom, final Blob outputBlob) throws IOException {
+		final BlobId blobId = BlobId.of(outputBlob.getBucket(), outputDirName + "/milan brankovic.zip");
+		final BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("application/zip").build();
 		
 		if (Files.size(uploadFrom) > 1_000_000) {
 			// When content is not available or large (1MB or more) it is recommended
