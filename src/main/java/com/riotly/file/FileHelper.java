@@ -1,12 +1,13 @@
 package com.riotly.file;
 
-import static java.nio.file.FileVisitResult.CONTINUE;
-import static java.nio.file.FileVisitResult.TERMINATE;
+import com.riotly.cloud.GoogleCloudWorker;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,19 +17,22 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.apache.commons.io.FileUtils;
-
-import com.riotly.cloud.GoogleCloudWorker;
+import static java.nio.file.FileVisitResult.CONTINUE;
+import static java.nio.file.FileVisitResult.TERMINATE;
 
 public class FileHelper {
 
 	public static final String ZIP_ARCHIVE_PATH = GoogleCloudWorker.DATA_DIRECTORY_NAME + "/milan brankovic.zip";
 
 	public static Path createDirectory(final String directoryName) {
-		File directory = new File(directoryName);
+		final File directory = new File(directoryName);
 		if (!directory.exists()) {
 			System.out.println("Creating directory with name: " + directoryName);
-			directory.mkdir();
+			final boolean isDirCreated = directory.mkdir();
+			if (!isDirCreated) {
+				System.out.println("Directory with name: " + directoryName + " not created successfully.");
+				System.err.println("FileHelper#createDirectory(directoryName)");
+			}
 		}
 
 		return directory.toPath();
@@ -58,40 +62,34 @@ public class FileHelper {
 					return handleException(e);
 				}
 
-				System.out.println("Deleting directory with name: " + dir);
+				System.out.println("Deleting directory with name: " + dir.getFileName());
 				Files.delete(dir);
 				return CONTINUE;
 			}
 		});
-	};
+	}
 
-	public static void writeToFile(final String content, final String path) {
-		try {
-			FileUtils.write(new File(path), content);
-		} catch (IOException e) {
-			System.err.println("CSVWriter#writeToFile(content, fileName) IOException: " + e);
-		}
+	public static void writeToFile(final String content, final String path) throws IOException {
+			FileUtils.write(new File(path), content, Charset.defaultCharset());
 	}
 	
 	public static void zipFiles(List<Path> srcFiles) throws IOException {
-		FileOutputStream fos = new FileOutputStream(ZIP_ARCHIVE_PATH);
-        ZipOutputStream zipOut = new ZipOutputStream(fos);
-        
-        for (Path srcFile : srcFiles) {
-            File fileToZip = srcFile.toFile();
-            FileInputStream fis = new FileInputStream(fileToZip);
-            ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
-            zipOut.putNextEntry(zipEntry);
- 
-            byte[] bytes = new byte[1024];
-            int length;
-            while((length = fis.read(bytes)) >= 0) {
-                zipOut.write(bytes, 0, length);
-            }
-            fis.close();
-        }
-        
-        zipOut.close();
-        fos.close();
-    }
+		try (final FileOutputStream fos = new FileOutputStream(ZIP_ARCHIVE_PATH);
+			 final ZipOutputStream zipOut = new ZipOutputStream(fos)) {
+
+			for (final Path srcFile : srcFiles) {
+				final File fileToZip = srcFile.toFile();
+				try (final FileInputStream fis = new FileInputStream(fileToZip)) {
+					final ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
+					zipOut.putNextEntry(zipEntry);
+
+					byte[] bytes = new byte[1024];
+					int length;
+					while ((length = fis.read(bytes)) >= 0) {
+						zipOut.write(bytes, 0, length);
+					}
+				}
+			}
+		}
+	}
 }

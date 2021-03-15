@@ -41,7 +41,11 @@ public class CSVWriter {
 		final String user = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.indexOf("."));
 		
 		final String content = generateCSVString(user, data, separator);
-		FileHelper.writeToFile(content, csvPath);
+		try {
+			FileHelper.writeToFile(content, csvPath);
+		} catch (IOException e) {
+			System.err.println("Could not write content fo file: " + csvPath);
+		}
 	}
 
 	public void generateCSV(final String filePath, final Map<Long, Map<String, Integer>> data) {
