@@ -25,7 +25,7 @@ public class CSVWriter {
 	public static final String USER = "user";
 	public static final String DATE = "date";
 
-	public static final List<String> COLUMNS_SORTED = Arrays.asList(JSONFlattener.EGAGMENT_PER_DAY_CSV_NAME,
+	public static final List<String> COLUMNS_SORTED = Arrays.asList(JSONFlattener.ENGAGEMENT_PER_DAY_CSV_NAME,
 			JSONFlattener.BLOCKED_FOLLOWERS_PER_DAY_CSV_NAME, JSONFlattener.FOLLOWERS_PER_DAY_CSV_NAME,
 			JSONFlattener.FOLLOWING_PER_DAY_CSV_NAME, JSONFlattener.FOLLOWS_BACK_PER_DAY_CSV_NAME,
 			JSONFlattener.FOLLOWS_PER_DAY_CSV_NAME, JSONFlattener.LIKES_PER_DAY_CSV_NAME,

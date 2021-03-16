@@ -12,8 +12,8 @@ import org.json.JSONObject;
 
 public class JSONFlattener {
 
-	public static final String EGAGMENT_PER_DAY_JSON_NAME = "_engagementPerDay";
-	public static final String EGAGMENT_PER_DAY_CSV_NAME = "engagement_per_day";
+	public static final String ENGAGEMENT_PER_DAY_JSON_NAME = "_engagementPerDay";
+	public static final String ENGAGEMENT_PER_DAY_CSV_NAME = "engagement_per_day";
 	public static final String BLOCKED_FOLLOWERS_PER_DAY_JSON_NAME = "_blockedFollowersPerDay";
 	public static final String BLOCKED_FOLLOWERS_PER_DAY_CSV_NAME = "blocked_followers_per_day";
 	public static final String FOLLOWERS_PER_DAY_JSON_NAME = "_followersPerDayEx";
@@ -42,7 +42,7 @@ public class JSONFlattener {
 		private static final long serialVersionUID = 1L;
 
 		{
-			put(JSONFlattener.EGAGMENT_PER_DAY_JSON_NAME, JSONFlattener.EGAGMENT_PER_DAY_CSV_NAME);
+			put(JSONFlattener.ENGAGEMENT_PER_DAY_JSON_NAME, JSONFlattener.ENGAGEMENT_PER_DAY_CSV_NAME);
 			put(JSONFlattener.BLOCKED_FOLLOWERS_PER_DAY_JSON_NAME, JSONFlattener.BLOCKED_FOLLOWERS_PER_DAY_CSV_NAME);
 			put(JSONFlattener.FOLLOWERS_PER_DAY_JSON_NAME, JSONFlattener.FOLLOWERS_PER_DAY_CSV_NAME);
 			put(JSONFlattener.FOLLOWING_PER_DAY_JSON_NAME, JSONFlattener.FOLLOWING_PER_DAY_CSV_NAME);
@@ -85,9 +85,9 @@ public class JSONFlattener {
 			for (final String key : TRANSFORM_MAP_NAMES.keySet()) {
 				final JSONArray array = (JSONArray) jsonObject.get(key);
 				for(int i = 0; i < array.length(); i++) {
-					final JSONObject jobj = array.getJSONObject(i);
+					final JSONObject jObj = array.getJSONObject(i);
 					
-					final String substringTime = ((String)jobj.get(JSONFlattener.DATE_FIELD)).substring(6);
+					final String substringTime = ((String)jObj.get(JSONFlattener.DATE_FIELD)).substring(6);
 					final Long date = Long.parseLong(substringTime.substring(0, substringTime.indexOf("-")));
 					if(!result.containsKey(date)) {
 						result.put(date, JSONFlattener.initCounts());
@@ -95,7 +95,7 @@ public class JSONFlattener {
 					
 					Map<String, Integer> data = result.get(date);
 					
-					Integer count = (Integer) jobj.get(JSONFlattener.COUNT_FIELD);
+					Integer count = (Integer) jObj.get(JSONFlattener.COUNT_FIELD);
 					if(data.containsKey(TRANSFORM_MAP_NAMES.get(key))) {
 						count += data.get(TRANSFORM_MAP_NAMES.get(key));
 					}
@@ -113,7 +113,7 @@ public class JSONFlattener {
 	private static Map<String, Integer> initCounts(){
 		final Map<String, Integer> map = new HashMap<>();
 		
-		for (String key : TRANSFORM_MAP_NAMES.keySet()) {
+		for (final String key : TRANSFORM_MAP_NAMES.keySet()) {
 			map.put(TRANSFORM_MAP_NAMES.get(key), 0);
 		}
 		
