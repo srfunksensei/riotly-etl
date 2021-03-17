@@ -25,6 +25,10 @@ public class FileHelper {
 	public static final String ZIP_ARCHIVE_PATH = GoogleCloudWorker.DATA_DIRECTORY_NAME + "/milan brankovic.zip";
 
 	public static Path createDirectory(final String directoryName) {
+		if (directoryName == null || directoryName.trim().isEmpty()) {
+			throw new IllegalArgumentException("Directory name is required");
+		}
+
 		final File directory = new File(directoryName);
 		if (!directory.exists()) {
 			System.out.println("Creating directory with name: " + directoryName);
@@ -32,6 +36,7 @@ public class FileHelper {
 			if (!isDirCreated) {
 				System.out.println("Directory with name: " + directoryName + " not created successfully.");
 				System.err.println("FileHelper#createDirectory(directoryName)");
+				return null;
 			}
 		}
 
@@ -70,11 +75,28 @@ public class FileHelper {
 	}
 
 	public static void writeToFile(final String content, final String path) throws IOException {
-			FileUtils.write(new File(path), content, Charset.defaultCharset());
+		if (content == null) {
+			throw new IllegalArgumentException("File content must be present");
+		}
+
+		if (path == null || path.trim().isEmpty()) {
+			throw new IllegalArgumentException("File path must be present");
+		}
+
+		FileUtils.write(new File(path), content, Charset.defaultCharset());
 	}
 	
-	public static void zipFiles(List<Path> srcFiles) throws IOException {
-		try (final FileOutputStream fos = new FileOutputStream(ZIP_ARCHIVE_PATH);
+	public static void zipFiles(final List<Path> srcFiles, final String... filePath) throws IOException {
+		if (srcFiles == null || srcFiles.isEmpty()) {
+			return;
+		}
+
+		String zipArchivePath = ZIP_ARCHIVE_PATH;
+		if (filePath != null && filePath.length > 0 && !filePath[0].trim().isEmpty()) {
+			zipArchivePath = filePath[0];
+		}
+
+		try (final FileOutputStream fos = new FileOutputStream(zipArchivePath);
 			 final ZipOutputStream zipOut = new ZipOutputStream(fos)) {
 
 			for (final Path srcFile : srcFiles) {
