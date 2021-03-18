@@ -1,0 +1,1058 @@
+{
+  "_id": "0acbb0d4-9516-4c2c-ae8a-9be3cd269e78",
+  "_name": null,
+  "_timeStorageDictionary": null,
+  "<Created>k__BackingField": "/Date(1518073732184-0800)/",
+  "FixVersion": 1,
+  "_acceptedGroupUsersPerDay": [],
+  "_averageSelectionResults": {
+    "<AveragePostsPerDay>k__BackingField": 523,
+    "<AvgAvgComments>k__BackingField": 50.7,
+    "<AvgAvgLikes>k__BackingField": 4106.6,
+    "<AvgBlockedFollowers>k__BackingField": 0,
+    "<AvgBump>k__BackingField": 0,
+    "<AvgComment>k__BackingField": 0,
+    "<AvgContactFriends>k__BackingField": 0,
+    "<AvgContactMembersReplies>k__BackingField": 0,
+    "<AvgContactMessages>k__BackingField": 0,
+    "<AvgDeletedComments>k__BackingField": 0,
+    "<AvgFollows>k__BackingField": 523,
+    "<AvgJoiner>k__BackingField": 0,
+    "<AvgLikedComments>k__BackingField": 0,
+    "<AvgLikes>k__BackingField": 0,
+    "<AvgRepin>k__BackingField": 0,
+    "<AvgReposts>k__BackingField": 0,
+    "<AvgSavedPostss>k__BackingField": 0,
+    "<AvgSeenStories>k__BackingField": 0,
+    "<AvgUnJoiner>k__BackingField": 0,
+    "<AvgUnfollows>k__BackingField": 375,
+    "<Engagement>k__BackingField": 19.406,
+    "<MaxPostPerDay>k__BackingField": 698,
+    "<MinPostPerDay>k__BackingField": 34,
+    "<TotalBlockedFollowers>k__BackingField": 0,
+    "<TotalBump>k__BackingField": 0,
+    "<TotalComment>k__BackingField": 0,
+    "<TotalContactFriends>k__BackingField": 0,
+    "<TotalContactMembersReplies>k__BackingField": 0,
+    "<TotalContactMessages>k__BackingField": 0,
+    "<TotalDeletedComments>k__BackingField": 0,
+    "<TotalFollowers>k__BackingField": 18618,
+    "<TotalFollowings>k__BackingField": 2340,
+    "<TotalFollows>k__BackingField": 13053,
+    "<TotalJoiner>k__BackingField": 0,
+    "<TotalLikedComments>k__BackingField": 0,
+    "<TotalLikes>k__BackingField": 0,
+    "<TotalNumberOfPosts>k__BackingField": 13053,
+    "<TotalRepin>k__BackingField": 0,
+    "<TotalReposts>k__BackingField": 0,
+    "<TotalSavedPosts>k__BackingField": 0,
+    "<TotalSeenStories>k__BackingField": 0,
+    "<TotalUnFollows>k__BackingField": 11228,
+    "<TotalUnJoiner>k__BackingField": 0
+  },
+  "_avgCommentsPerDay": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 57
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 57
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 58
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 58
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519977600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 57
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520064000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 57
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520150400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 55
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 56
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 57
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 57
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 58
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520838000000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 58
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520924400000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 58
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521010800000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 51
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521097200000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 51
+    }
+  ],
+  "_avgLikesPerDay": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4438
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4453
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4464
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4480
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4489
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4498
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4227
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519977600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4242
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520064000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4246
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520150400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4044
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4052
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4066
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4078
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4086
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4093
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4102
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4112
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520838000000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4116
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520924400000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4116
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521010800000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4102
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521097200000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4107
+    }
+  ],
+  "_avgNoComments": 50.7,
+  "_avgNoLikes": 4106.6,
+  "_blockedFollowersPerDay": [],
+  "_bumpPerDay": null,
+  "_bumpsPerDay": [],
+  "_bumpsPerDayEx": [],
+  "_commentsPerDayEx": [],
+  "_contactMembersFriendsDayEx": [],
+  "_contactMembersFriendsPerDayEx": [],
+  "_contactMembersRepliesPerDay": [],
+  "_deletedCommentsPerDay": [],
+  "_deletedPostsPerDay": [],
+  "_engagement": 19.406,
+  "_engagementPerDay": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518422400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 153
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518508800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 153
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518595200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 160
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518854400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 186
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518940800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 184
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519027200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 183
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519113600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 184
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519200000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 183
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519286400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 182
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 182
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 181
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 181
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 179
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 178
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 178
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 187
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519977600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 181
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520064000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 182
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520150400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 188
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 187
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 187
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 186
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 186
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 185
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 184
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 184
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520838000000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 184
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520924400000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 184
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521010800000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 189
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521097200000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 194
+    }
+  ],
+  "_followersPerDay": null,
+  "_followersPerDayEx": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518422400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17073
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518508800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17173
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518595200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17292
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518854400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17291
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518940800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17258
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519027200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17326
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519113600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17334
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519200000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17386
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519286400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17547
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17677
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17811
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 17883
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18047
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18194
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18265
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18264
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519977600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18186
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520064000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18102
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520150400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18054
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18123
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18211
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18339
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18412
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18498
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18603
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18702
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520838000000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18709
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520924400000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18696
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521010800000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18634
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521097200000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 18618
+    }
+  ],
+  "_followingsPerDayEx": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518422400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2928
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518508800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3469
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518595200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3763
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518854400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3655
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518940800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3606
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519027200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3358
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519113600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3349
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519200000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3243
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519286400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4172
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4307
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4436
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4521
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4649
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4760
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4332
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3878
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519977600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 1980
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520064000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 1411
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520150400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 1731
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2191
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2858
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2907
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3210
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3273
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3397
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 3404
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520838000000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2765
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520924400000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2346
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521010800000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2346
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521097200000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 2340
+    }
+  ],
+  "_followsBackPerDay": [],
+  "_followsPerDay": null,
+  "_followsPerDayEx": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518422400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 696
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518508800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 624
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518595200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 641
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518681600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 192
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518854400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 34
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518940800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 125
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519027200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 368
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519113600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 113
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519200000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 655
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519286400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 632
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 698
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 622
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 684
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 634
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 618
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 608
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 58
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520150400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 436
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 640
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 613
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 687
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 665
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 674
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 638
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 698
+    }
+  ],
+  "_invitedFriendsPerDay": [],
+  "_joinsPerDay": null,
+  "_joinsPerDayEx": [],
+  "_likedCommentsPerDay": [],
+  "_likesPerDay": null,
+  "_likesPerDayEx": [],
+  "_maxValueEx": 4450,
+  "_platform": 3,
+  "_postsPerDayEx": [],
+  "_randomActionsPerDay": [],
+  "_repinsPerDay": null,
+  "_repinsPerDayEx": [],
+  "_repostsPerDay": [],
+  "_savedPostsPerDay": [],
+  "_seenStoriesPerDay": [],
+  "_statisticsSettings": {
+    "_id": "9dac2d57-425c-47e2-9c0d-35bb8f1ff932",
+    "_name": null,
+    "_timeStorageDictionary": null,
+    "<Created>k__BackingField": "/Date(1519022498713-0800)/",
+    "_exportAt": "/Date(-62135488800000-0800)/",
+    "_exportDaily": false,
+    "_statisticsExportFolderPath": null
+  },
+  "_totalCreditCardModulesBought": 0,
+  "_totalFollowers": 18618,
+  "_totalFollowings": 2340,
+  "_totalModulesActuallyBought": 0,
+  "_totalPaypalModulesBought": 0,
+  "_totalPostsSent": 0,
+  "_totalSpinEditorUsage": 0,
+  "_totalUniquePostsSent": 0,
+  "_type": 0,
+  "_unfollowDayEx": [
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518336000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 60
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518422400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 4
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518595200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 567
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518681600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 150
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518854400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 92
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1518940800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 351
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519027200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 379
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519113600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 116
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519200000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 424
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519286400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 92
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519372800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 509
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519459200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 493
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519545600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 546
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519632000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 479
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519718400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 523
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519804800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 436
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519891200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 876
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1519977600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 802
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520064000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 196
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520236800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 1
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520323200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 349
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520409600000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 516
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520496000000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 396
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520582400000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 563
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520668800000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 649
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520755200000-0800)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 574
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520838000000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 660
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1520924400000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 419
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521010800000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 1
+    },
+    {
+      "<CurrentDate>k__BackingField": "/Date(1521097200000-0700)/",
+      "<MaxPerDay>k__BackingField": 0,
+      "<NumberPerDay>k__BackingField": 5
+    }
+  ],
+  "_unjoinerPerDayEx": [],
+  "<PostsPerDay>k__BackingField": null,
+  "igTotalNumberOfFollowedPersons": 0,
+  "igTotalNumberOfUnFollowedPersons": 0,
+  "totalNumberOfFollowedBackPersons": 0,
+  "totalNumberOfFollowedPersons": 0,
+  "totalNumberOfUnFollowedPersons": 0
+}

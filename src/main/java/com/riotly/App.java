@@ -38,7 +38,7 @@ public class App {
 			}
 			
 			Stream.of(downloadToPath.toFile().listFiles()).parallel().forEach(f -> {
-				Map<Long, Map<String, Integer>> data = new JSONFlattener().parseJson(f);
+				Map<Long, Map<String, Long>> data = new JSONFlattener().parseJson(f);
 				new CSVWriter().generateCSV(f.getPath(), data);
 			});
 			
