@@ -1,15 +1,20 @@
 package com.riotly.file;
 
+import com.riotly.writer.CSVWriter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -134,7 +139,7 @@ public class FileHelperTest {
         Files.createFile(file1.toPath());
         Files.createFile(file2.toPath());
 
-        FileHelper.zipFiles(Stream.of(file1.toPath(), file2.toPath()).collect(Collectors.toList()), new String[] { zip.toAbsolutePath().toString() });
+        FileHelper.zipFiles(Stream.of(file1.toPath(), file2.toPath()).collect(Collectors.toList()), Optional.of(zip.toAbsolutePath().toString()));
 
         FileHelper.deleteFileOrFolder(directoryTest);
         FileHelper.deleteFileOrFolder(outputDirectory);
@@ -146,5 +151,62 @@ public class FileHelperTest {
         if (Files.exists(file1.toPath()) || Files.exists(file2.toPath()) || Files.exists(zip)) {
             Assertions.fail("Expected to delete files in directory");
         }
+    }
+
+    @Test
+    public void merge_filesWithContent() throws Exception {
+        final Path directoryTest = FileHelper.createDirectory(TEST_DIR_NAME);
+
+        final File outputFile = new File(directoryTest.toAbsolutePath().toString() + "/" + CSVWriter.ALL_FILES_MERGED_CSV_NAME);
+        Files.createFile(outputFile.toPath());
+
+        final String file1Content = "file1",
+                file2Content = "file2",
+                header = "header";
+
+        final Path file1Path = prepareFileInDirectory(directoryTest, "/file1.txt", header, file1Content),
+                file2Path = prepareFileInDirectory(directoryTest, "/file2.txt", header, file2Content);
+
+        final Path mergePath = FileHelper.merge(Stream.of(file1Path, file2Path).collect(Collectors.toList()), Optional.of(outputFile.getAbsolutePath()));
+
+        final List<String> result = Files.readAllLines(mergePath);
+        Assertions.assertEquals(Stream.of(header, file1Content, file2Content).collect(Collectors.toList()), result, "Expected different content");
+
+        FileHelper.deleteFileOrFolder(directoryTest);
+        FileHelper.deleteFileOrFolder(mergePath);
+    }
+
+    @Test
+    public void merge_filesWithoutContent() throws Exception {
+        final Path directoryTest = FileHelper.createDirectory(TEST_DIR_NAME);
+
+        final File outputFile = new File(directoryTest.toAbsolutePath().toString() + "/" + CSVWriter.ALL_FILES_MERGED_CSV_NAME);
+        Files.createFile(outputFile.toPath());
+
+        final Path file1Path = prepareFileInDirectory(directoryTest, "/file1.txt", "", ""),
+                file2Path = prepareFileInDirectory(directoryTest, "/file2.txt", "", "");
+
+        final Path mergePath = FileHelper.merge(Stream.of(file1Path, file2Path).collect(Collectors.toList()), Optional.of(outputFile.getAbsolutePath()));
+
+        final List<String> result = Files.readAllLines(mergePath);
+        Assertions.assertEquals(new ArrayList<>(), result, "Expected different content");
+
+        FileHelper.deleteFileOrFolder(directoryTest);
+        FileHelper.deleteFileOrFolder(mergePath);
+    }
+
+    private Path prepareFileInDirectory(final Path directory, final String fileName, final String header, final String fileContent) throws IOException {
+        final File file = new File(directory.toAbsolutePath().toString() + fileName);
+
+        Files.createFile(file.toPath());
+
+        final Path filePath = Paths.get(file.getPath());
+        try (final BufferedWriter writer = Files.newBufferedWriter(filePath))
+        {
+            writer.write(header);
+            writer.newLine();
+            writer.write(fileContent);
+        }
+        return filePath;
     }
 }

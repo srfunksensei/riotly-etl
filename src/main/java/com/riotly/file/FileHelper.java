@@ -1,6 +1,7 @@
 package com.riotly.file;
 
 import com.riotly.cloud.GoogleCloudWorker;
+import com.riotly.writer.CSVWriter;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -8,12 +9,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
+import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -86,16 +86,12 @@ public class FileHelper {
 		FileUtils.write(new File(path), content, Charset.defaultCharset());
 	}
 	
-	public static void zipFiles(final List<Path> srcFiles, final String... filePath) throws IOException {
+	public static void zipFiles(final List<Path> srcFiles, final Optional<String> filePathOpt) throws IOException {
 		if (srcFiles == null || srcFiles.isEmpty()) {
 			return;
 		}
 
-		String zipArchivePath = ZIP_ARCHIVE_PATH;
-		if (filePath != null && filePath.length > 0 && !filePath[0].trim().isEmpty()) {
-			zipArchivePath = filePath[0];
-		}
-
+		final String zipArchivePath = filePathOpt.orElse(ZIP_ARCHIVE_PATH);
 		try (final FileOutputStream fos = new FileOutputStream(zipArchivePath);
 			 final ZipOutputStream zipOut = new ZipOutputStream(fos)) {
 
@@ -113,5 +109,25 @@ public class FileHelper {
 				}
 			}
 		}
+	}
+
+	public static Path merge(final List<Path> paths, final Optional<String> fileNameOpt) throws IOException {
+		final List<String> mergedLines = new ArrayList<>();
+		for (final Path p : paths){
+			final List<String> lines = Files.readAllLines(p, Charset.defaultCharset());
+			if (!lines.isEmpty()) {
+				if (mergedLines.isEmpty()) {
+					mergedLines.add(lines.get(0)); //add header only once
+				}
+				mergedLines.addAll(lines.subList(1, lines.size()));
+			}
+		}
+
+		final String mergedCsvName = fileNameOpt.orElse(GoogleCloudWorker.DATA_DIRECTORY_NAME + "/" + CSVWriter.ALL_FILES_MERGED_CSV_NAME);
+		if(!mergedLines.isEmpty()) {
+			FileHelper.writeToFile(String.join("\n", mergedLines), mergedCsvName);
+		}
+
+		return Paths.get(mergedCsvName);
 	}
 }

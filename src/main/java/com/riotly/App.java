@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -45,10 +46,10 @@ public class App {
 			List<Path> srcFiles = Files.list(downloadToPath)
 									.filter(s -> s.toString().endsWith(".csv"))
 									.collect(Collectors.toList());
-			final Path mergedSrc = CSVWriter.merge(srcFiles);
+			final Path mergedSrc = FileHelper.merge(srcFiles, Optional.empty());
 			srcFiles.add(mergedSrc);
 			
-			FileHelper.zipFiles(srcFiles);
+			FileHelper.zipFiles(srcFiles, Optional.empty());
 			
 			if(worker.getOutputBlob().isPresent()) {
 				worker.upload(Paths.get(FileHelper.ZIP_ARCHIVE_PATH), worker.getOutputBlob().get());
