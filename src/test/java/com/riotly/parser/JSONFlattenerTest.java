@@ -1,9 +1,7 @@
 package com.riotly.parser;
 
-import com.riotly.file.FileHelper;
 import com.riotly.writer.CSVWriter;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -63,6 +61,6 @@ public class JSONFlattenerTest {
 
         Assertions.assertEquals(new HashSet<>(CSVWriter.COLUMNS_SORTED), result_1519200000000.keySet(), "Expected different values for result column names");
 
-        Assertions.assertEquals(183, result_1519200000000.get(CSVWriter.ENGAGEMENT_PER_DAY_CSV_NAME), "Expected different value");
+        Assertions.assertEquals(183, result_1519200000000.get(CSVWriter.ENGAGEMENT_PER_DAY_CSV_COLUMN_NAME), "Expected different value");
     }
 }

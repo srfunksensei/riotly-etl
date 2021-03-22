@@ -14,17 +14,17 @@ import java.util.Map;
 
 public class JSONFlattener {
 
-	public static final String ENGAGEMENT_PER_DAY_JSON_NAME = "_engagementPerDay";
-	public static final String BLOCKED_FOLLOWERS_PER_DAY_JSON_NAME = "_blockedFollowersPerDay";
-	public static final String FOLLOWERS_PER_DAY_JSON_NAME = "_followersPerDayEx";
-	public static final String FOLLOWING_PER_DAY_JSON_NAME = "_followingsPerDayEx";
-	public static final String FOLLOWS_BACK_PER_DAY_JSON_NAME = "_followsBackPerDay";
-	public static final String FOLLOWS_PER_DAY_JSON_NAME = "_followsPerDayEx";
-	public static final String LIKES_PER_DAY_JSON_NAME = "_likesPerDayEx";
-	public static final String UNFOLLOW_PER_DAY_JSON_NAME = "_unfollowDayEx";
-	public static final String COMMENTS_PER_DAY_JSON_NAME = "_commentsPerDayEx";
-	public static final String SEEN_STORIES_PER_DAY_JSON_NAME = "_seenStoriesPerDay";
-	public static final String CONTACT_MEMBERS_FRIENDS_PER_DAY_JSON_NAME = "_contactMembersFriendsPerDayEx";
+	public static final String ENGAGEMENT_PER_DAY_JSON_PROPERTY_NAME = "_engagementPerDay";
+	public static final String BLOCKED_FOLLOWERS_PER_DAY_JSON_PROPERTY_NAME = "_blockedFollowersPerDay";
+	public static final String FOLLOWERS_PER_DAY_JSON_PROPERTY_NAME = "_followersPerDayEx";
+	public static final String FOLLOWING_PER_DAY_JSON_PROPERTY_NAME = "_followingsPerDayEx";
+	public static final String FOLLOWS_BACK_PER_DAY_JSON_PROPERTY_NAME = "_followsBackPerDay";
+	public static final String FOLLOWS_PER_DAY_JSON_PROPERTY_NAME = "_followsPerDayEx";
+	public static final String LIKES_PER_DAY_JSON_PROPERTY_NAME = "_likesPerDayEx";
+	public static final String UNFOLLOW_PER_DAY_JSON_PROPERTY_NAME = "_unfollowDayEx";
+	public static final String COMMENTS_PER_DAY_JSON_PROPERTY_NAME = "_commentsPerDayEx";
+	public static final String SEEN_STORIES_PER_DAY_JSON_PROPERTY_NAME = "_seenStoriesPerDay";
+	public static final String CONTACT_MEMBERS_FRIENDS_PER_DAY_JSON_PROPERTY_NAME = "_contactMembersFriendsPerDayEx";
 
 	public static final String DATE_FIELD = "<CurrentDate>k__BackingField";
 	public static final String COUNT_FIELD = "<NumberPerDay>k__BackingField";
@@ -33,18 +33,17 @@ public class JSONFlattener {
 		private static final long serialVersionUID = 1L;
 
 		{
-			put(JSONFlattener.ENGAGEMENT_PER_DAY_JSON_NAME, CSVWriter.ENGAGEMENT_PER_DAY_CSV_NAME);
-			put(JSONFlattener.BLOCKED_FOLLOWERS_PER_DAY_JSON_NAME, CSVWriter.BLOCKED_FOLLOWERS_PER_DAY_CSV_NAME);
-			put(JSONFlattener.FOLLOWERS_PER_DAY_JSON_NAME, CSVWriter.FOLLOWERS_PER_DAY_CSV_NAME);
-			put(JSONFlattener.FOLLOWING_PER_DAY_JSON_NAME, CSVWriter.FOLLOWING_PER_DAY_CSV_NAME);
-			put(JSONFlattener.FOLLOWS_BACK_PER_DAY_JSON_NAME, CSVWriter.FOLLOWS_BACK_PER_DAY_CSV_NAME);
-			put(JSONFlattener.FOLLOWS_PER_DAY_JSON_NAME, CSVWriter.FOLLOWS_PER_DAY_CSV_NAME);
-			put(JSONFlattener.LIKES_PER_DAY_JSON_NAME, CSVWriter.LIKES_PER_DAY_CSV_NAME);
-			put(JSONFlattener.UNFOLLOW_PER_DAY_JSON_NAME, CSVWriter.UNFOLLOW_PER_DAY_CSV_NAME);
-			put(JSONFlattener.COMMENTS_PER_DAY_JSON_NAME, CSVWriter.COMMENTS_PER_DAY_CSV_NAME);
-			put(JSONFlattener.SEEN_STORIES_PER_DAY_JSON_NAME, CSVWriter.SEEN_STORIES_PER_DAY_CSV_NAME);
-			put(JSONFlattener.CONTACT_MEMBERS_FRIENDS_PER_DAY_JSON_NAME,
-					CSVWriter.CONTACT_MEMBERS_FRIENDS_PER_DAY_CSV_NAME);
+			put(ENGAGEMENT_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.ENGAGEMENT_PER_DAY_CSV_COLUMN_NAME);
+			put(BLOCKED_FOLLOWERS_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.BLOCKED_FOLLOWERS_PER_DAY_CSV_COLUMN_NAME);
+			put(FOLLOWERS_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.FOLLOWERS_PER_DAY_CSV_COLUMN_NAME);
+			put(FOLLOWING_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.FOLLOWING_PER_DAY_CSV_COLUMN_NAME);
+			put(FOLLOWS_BACK_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.FOLLOWS_BACK_PER_DAY_CSV_COLUMN_NAME);
+			put(FOLLOWS_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.FOLLOWS_PER_DAY_CSV_COLUMN_NAME);
+			put(LIKES_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.LIKES_PER_DAY_CSV_COLUMN_NAME);
+			put(UNFOLLOW_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.UNFOLLOW_PER_DAY_CSV_COLUMN_NAME);
+			put(COMMENTS_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.COMMENTS_PER_DAY_CSV_COLUMN_NAME);
+			put(SEEN_STORIES_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.SEEN_STORIES_PER_DAY_CSV_COLUMN_NAME);
+			put(CONTACT_MEMBERS_FRIENDS_PER_DAY_JSON_PROPERTY_NAME, CSVWriter.CONTACT_MEMBERS_FRIENDS_PER_DAY_CSV_COLUMN_NAME);
 		}
 	};
 
@@ -78,15 +77,15 @@ public class JSONFlattener {
 				for(int i = 0; i < array.length(); i++) {
 					final JSONObject jObj = array.getJSONObject(i);
 					
-					final String substringTime = jObj.get(JSONFlattener.DATE_FIELD).toString().substring(6);
+					final String substringTime = jObj.get(DATE_FIELD).toString().substring(6);
 					final Long date = Long.parseLong(substringTime.substring(0, substringTime.indexOf("-")));
 					if(!result.containsKey(date)) {
-						result.put(date, JSONFlattener.initCounts());
+						result.put(date, initCounts());
 					}
 					
 					Map<String, Long> data = result.get(date);
 					
-					Long count = Long.parseLong(jObj.get(JSONFlattener.COUNT_FIELD).toString());
+					Long count = Long.parseLong(jObj.get(COUNT_FIELD).toString());
 					if(data.containsKey(TRANSFORM_MAP_NAMES.get(key))) {
 						count += data.get(TRANSFORM_MAP_NAMES.get(key));
 					}
