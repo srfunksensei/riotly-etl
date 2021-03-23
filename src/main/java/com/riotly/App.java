@@ -21,18 +21,21 @@ import com.riotly.parser.JSONFlattener;
 import com.riotly.writer.CSVWriter;
 
 public class App {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		final Path downloadToPath = FileHelper.createDirectory(GoogleCloudWorker.DATA_DIRECTORY_NAME);
+		if (downloadToPath == null) {
+			return;
+		}
+
 		try {
 			final ClassLoader classLoader = App.class.getClassLoader();
 
 			final Storage storage = GoogleCloudWorker.authExplicit(classLoader.getResource("credentials.json").getPath(), GoogleCloudWorker.DEFAULT_PROJECT_ID);
 			final Bucket bucket = storage.get(GoogleCloudWorker.DEFAULT_BUCKET_NAME);
 
-			final Path downloadToPath = FileHelper.createDirectory(GoogleCloudWorker.DATA_DIRECTORY_NAME);
-
 			final GoogleCloudWorker worker = new GoogleCloudWorker(storage, bucket);
-			Set<Blob> blobs = worker.collectJsonObjectNamesInBucketDirectory(GoogleCloudWorker.DATA_DIRECTORY_NAME);
-			for (Blob b : blobs) {
+			final Set<Blob> blobs = worker.collectJsonObjectNamesInBucketDirectory(GoogleCloudWorker.DATA_DIRECTORY_NAME);
+			for (final Blob b : blobs) {
 				final File file = new File(b.getName());
 				
 				 worker.download(b, file.toPath());
@@ -43,7 +46,7 @@ public class App {
 				CSVWriter.generateCSV(f.getPath(), data);
 			});
 			
-			List<Path> srcFiles = Files.list(downloadToPath)
+			final List<Path> srcFiles = Files.list(downloadToPath)
 									.filter(s -> s.toString().endsWith(".csv"))
 									.collect(Collectors.toList());
 			final Path mergedSrc = FileHelper.merge(srcFiles, Optional.empty());
@@ -51,13 +54,14 @@ public class App {
 			
 			FileHelper.zipFiles(srcFiles, Optional.empty());
 			
-			if(worker.getOutputBlob().isPresent()) {
+			if (worker.getOutputBlob().isPresent()) {
 				worker.upload(Paths.get(FileHelper.ZIP_ARCHIVE_PATH), worker.getOutputBlob().get());
 			}
 			
-			FileHelper.deleteFileOrFolder(downloadToPath);
 		} catch (IOException e) {
-			System.err.println(e);
+			System.err.println(e.fillInStackTrace().toString());
+		} finally {
+			FileHelper.deleteFileOrFolder(downloadToPath);
 		}
 	}
 }
