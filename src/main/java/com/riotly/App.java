@@ -38,7 +38,7 @@ public class App {
 			for (final Blob b : blobs) {
 				final File file = new File(b.getName());
 				
-				 worker.download(b, file.toPath());
+				 worker.download(file.toPath(), b);
 			}
 			
 			Stream.of(downloadToPath.toFile().listFiles()).parallel().forEach(f -> {

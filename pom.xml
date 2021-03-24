@@ -19,6 +19,7 @@
 		<org.json.version>20210307</org.json.version>
 		<google.cloud.storage.version>1.113.13</google.cloud.storage.version>
 		<junit.version>5.7.1</junit.version>
+		<mockito-core.version>3.8.0</mockito-core.version>
 	</properties>
 
 	<build>
@@ -63,6 +64,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito-core.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	
 </project>

@@ -1,10 +1,6 @@
 package com.riotly.cloud;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
@@ -54,7 +50,10 @@ public class GoogleCloudWorker {
 		}
 	}
 
-	public void setOutputDirName(String outputDirName) {
+	public void setOutputDirName(final String outputDirName) {
+		if (isBlank(outputDirName)) {
+			throw new IllegalArgumentException("Output directory name must be not blank");
+		}
 		this.outputDirName = outputDirName;
 	}
 
@@ -103,23 +102,24 @@ public class GoogleCloudWorker {
 				.filter(o -> o.getName().equals(directoryPath)).findFirst();
 	}
 
-	public void download(final Blob blob, final Path downloadTo) throws IOException {
+	public void download(final Path downloadTo, final Blob blob) throws IOException {
 		if (blob == null) {
-			System.err.println("No such object");
-			return;
+			throw new IllegalArgumentException("Blob must be present");
 		}
+
 		PrintStream writeTo = System.out;
 		if (downloadTo != null) {
 			writeTo = new PrintStream(new FileOutputStream(downloadTo.toFile()));
 		}
+
 		if (blob.getSize() < 1_000_000) {
 			// Blob is small read all its content in one request
-			byte[] content = blob.getContent();
+			final byte[] content = blob.getContent();
 			writeTo.write(content);
 		} else {
 			// When Blob size is big or unknown use the blob's channel reader.
-			try (ReadChannel reader = blob.reader()) {
-				WritableByteChannel channel = Channels.newChannel(writeTo);
+			try (ReadChannel reader = blob.reader();
+					WritableByteChannel channel = Channels.newChannel(writeTo)) {
 				ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
 				while (reader.read(bytes) > 0) {
 					bytes.flip();
@@ -128,6 +128,7 @@ public class GoogleCloudWorker {
 				}
 			}
 		}
+
 		if (downloadTo == null) {
 			writeTo.println();
 		} else {
@@ -136,23 +137,25 @@ public class GoogleCloudWorker {
 	}
 
 	public void upload(final Path uploadFrom, final Blob outputBlob) throws IOException {
+		if (uploadFrom == null) {
+			throw new IllegalArgumentException("Upload path must be present");
+		}
+		if (outputBlob == null) {
+			throw new IllegalArgumentException("Output blob must be present");
+		}
+
 		final BlobId blobId = BlobId.of(outputBlob.getBucket(), outputDirName + "/milan brankovic.zip");
 		final BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("application/zip").build();
 		
 		if (Files.size(uploadFrom) > 1_000_000) {
 			// When content is not available or large (1MB or more) it is recommended
 			// to write it in chunks via the blob's channel writer.
-			try (WriteChannel writer = storage.writer(blobInfo)) {
-				byte[] buffer = new byte[1024];
-				try (InputStream input = Files.newInputStream(uploadFrom)) {
-					int limit;
-					while ((limit = input.read(buffer)) >= 0) {
-						try {
-							writer.write(ByteBuffer.wrap(buffer, 0, limit));
-						} catch (Exception ex) {
-							ex.printStackTrace();
-						}
-					}
+			byte[] buffer = new byte[1024];
+			try (WriteChannel writer = storage.writer(blobInfo);
+				 InputStream input = Files.newInputStream(uploadFrom)) {
+				int limit;
+				while ((limit = input.read(buffer)) >= 0) {
+					writer.write(ByteBuffer.wrap(buffer, 0, limit));
 				}
 			}
 		} else {
