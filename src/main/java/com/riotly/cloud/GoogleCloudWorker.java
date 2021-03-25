@@ -73,7 +73,7 @@ public class GoogleCloudWorker {
 			throw new IllegalArgumentException("File provided must be json file");
 		}
 
-		final GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
+		final GoogleCredentials credentials = GoogleCredentials.fromStream(GoogleCloudWorker.class.getClassLoader().getResourceAsStream(jsonPath))
 				.createScoped(Lists.newArrayList(GOOGLE_CLOUD_PLATFORM_URL));
 
 		final String projId = isNotBlank(projectId) ? projectId : DEFAULT_PROJECT_ID;

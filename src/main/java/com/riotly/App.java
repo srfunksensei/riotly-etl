@@ -1,7 +1,17 @@
 package com.riotly;
 
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.Storage;
+import com.riotly.cloud.GoogleCloudWorker;
+import com.riotly.file.FileHelper;
+import com.riotly.parser.JSONFlattener;
+import com.riotly.writer.CSVWriter;
+
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,14 +22,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Storage;
-import com.riotly.cloud.GoogleCloudWorker;
-import com.riotly.file.FileHelper;
-import com.riotly.parser.JSONFlattener;
-import com.riotly.writer.CSVWriter;
-
 public class App {
 	public static void main(String[] args) throws IOException {
 		final Path downloadToPath = FileHelper.createDirectory(GoogleCloudWorker.DATA_DIRECTORY_NAME);
@@ -28,9 +30,7 @@ public class App {
 		}
 
 		try {
-			final ClassLoader classLoader = App.class.getClassLoader();
-
-			final Storage storage = GoogleCloudWorker.authExplicit(classLoader.getResource("credentials.json").getPath(), GoogleCloudWorker.DEFAULT_PROJECT_ID);
+			final Storage storage = GoogleCloudWorker.authExplicit("credentials.json", GoogleCloudWorker.DEFAULT_PROJECT_ID);
 			final Bucket bucket = storage.get(GoogleCloudWorker.DEFAULT_BUCKET_NAME);
 
 			final GoogleCloudWorker worker = new GoogleCloudWorker(storage, bucket);

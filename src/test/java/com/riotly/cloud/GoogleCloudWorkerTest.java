@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -32,10 +31,7 @@ public class GoogleCloudWorkerTest {
 
     @Test
     public void authExplicit() throws IOException {
-        final ClassLoader classLoader = this.getClass().getClassLoader();
-        final File file = new File(classLoader.getResource(CREDENTIALS_TEST_FILE).getFile());
-
-        final Storage storage = GoogleCloudWorker.authExplicit(file.getAbsolutePath(), null);
+        final Storage storage = GoogleCloudWorker.authExplicit(CREDENTIALS_TEST_FILE, null);
         Assertions.assertNotNull(storage, "Expected to create storage");
         Assertions.assertEquals(GoogleCloudWorker.DEFAULT_PROJECT_ID, storage.getOptions().getProjectId(), "Expected different project id");
 
